@@ -93,12 +93,12 @@ function renderManagerAndAnalysts() {
 
   // Cards dos analistas
   const analysts = [
-    { nome: "Tayran", tabela: "A" },
-    { nome: "Kayo", tabela: "B" },
-    { nome: "Carol", tabela: "C" },
-    { nome: "Everthon", tabela: "D" },
-    { nome: "Bruno", tabela: "E" },
-    { nome: "Maria Rita", tabela: "F" }
+    { nome: "Tayran - Tabela A", tabela: "A" },
+    { nome: "Kayo - Tabela B", tabela: "B" },
+    { nome: "Carol - Tabela C", tabela: "C" },
+    { nome: "Everthon - Tabela D", tabela: "D" },
+    { nome: "Bruno - Tabela E", tabela: "E" },
+    { nome: "Maria Rita - Tabela F", tabela: "F" }
   ];
 
   analystsGrid.innerHTML = analysts.map(a => cardTemplate(
