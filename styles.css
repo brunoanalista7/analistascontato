@@ -10,7 +10,13 @@
 }
 
 * { box-sizing: border-box; }
-html, body { margin: 0; padding: 0; font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, sans-serif; color: var(--gray-700); background: var(--gray-100); }
+
+html, body {
+  margin: 0;
+  font-family: 'Inter', system-ui, sans-serif;
+  background: var(--gray-100);
+  color: var(--gray-700);
+}
 
 .header {
   background: linear-gradient(135deg, var(--red-600), var(--red-700));
@@ -23,35 +29,22 @@ html, body { margin: 0; padding: 0; font-family: 'Inter', system-ui, -apple-syst
   display: inline-flex;
   align-items: center;
   gap: 12px;
-  justify-content: center;
 }
 
 .logo {
-  display: inline-grid;
-  place-items: center;
   width: 44px;
   height: 44px;
   border-radius: 12px;
   background: var(--white);
   color: var(--red-700);
+  display: grid;
+  place-items: center;
   font-weight: 800;
-  letter-spacing: 0.5px;
-}
-
-.header h1 {
-  margin: 0;
-  font-size: 28px;
-  font-weight: 800;
-}
-
-.subtitle {
-  margin: 8px 0 0;
-  opacity: 0.9;
 }
 
 .container {
   max-width: 1100px;
-  margin: 0 auto;
+  margin: auto;
   padding: 32px 20px 48px;
 }
 
@@ -61,15 +54,15 @@ html, body { margin: 0; padding: 0; font-family: 'Inter', system-ui, -apple-syst
   gap: 20px;
 }
 
+/* ================= CARDS ================= */
 .card {
   grid-column: span 12;
   background: var(--white);
   border-radius: 16px;
   box-shadow: var(--shadow);
-  overflow: hidden;
   display: grid;
   grid-template-columns: 140px 1fr;
-  min-height: 160px;
+  overflow: hidden;
   border: 1px solid var(--gray-300);
 }
 
@@ -77,13 +70,11 @@ html, body { margin: 0; padding: 0; font-family: 'Inter', system-ui, -apple-syst
   width: 100%;
   height: 100%;
   object-fit: cover;
-  background: var(--red-50);
 }
 
 .card__body {
   padding: 16px 18px;
   display: grid;
-  grid-template-rows: auto auto 1fr auto;
   gap: 8px;
 }
 
@@ -98,17 +89,9 @@ html, body { margin: 0; padding: 0; font-family: 'Inter', system-ui, -apple-syst
   color: #6b7280;
 }
 
-.card__meta {
-  display: flex;
-  gap: 12px;
-  flex-wrap: wrap;
-  margin-top: 6px;
-}
-
 .badge {
   background: var(--red-50);
   color: var(--red-700);
-  border: 1px solid #ffd6dc;
   padding: 6px 10px;
   border-radius: 999px;
   font-size: 12px;
@@ -116,41 +99,47 @@ html, body { margin: 0; padding: 0; font-family: 'Inter', system-ui, -apple-syst
 }
 
 .card__actions {
-  margin-top: 10px;
   display: flex;
   gap: 12px;
-  flex-wrap: wrap;
+  margin-top: 10px;
 }
 
+/* ================= BOTÕES ================= */
 .btn {
-  appearance: none;
-  border: none;
   border-radius: 12px;
   padding: 10px 14px;
   font-weight: 700;
   cursor: pointer;
-  transition: transform 0.08s ease, box-shadow 0.2s ease, background 0.2s ease;
+  border: none;
 }
 
 .btn--whatsapp {
   background: var(--red-600);
   color: var(--white);
-  box-shadow: 0 6px 16px rgba(217, 4, 41, 0.25);
-}
-
-.btn--whatsapp:hover {
-  background: var(--red-700);
-  transform: translateY(-1px);
 }
 
 .btn--outline {
   background: var(--white);
-  color: var(--red-700);
   border: 2px solid var(--red-600);
+  color: var(--red-700);
 }
 
-.btn--outline:hover {
-  background: var(--red-50);
+/* ================= GERENTE ================= */
+.manager-card {
+  margin-bottom: 32px;
+}
+
+.manager-card .card {
+  border: 3px solid var(--red-600);
+}
+
+/* ================= RESPONSIVO ================= */
+@media (min-width: 640px) {
+  .card { grid-column: span 4; }
+}
+
+@media (min-width: 960px) {
+  .card { grid-column: span 6; }
 }
 
 .footer {
@@ -159,11 +148,17 @@ html, body { margin: 0; padding: 0; font-family: 'Inter', system-ui, -apple-syst
   color: #6b7280;
 }
 
-/* Responsividade */
-@media (min-width: 640px) {
-  .card { grid-column: span 6; }
+/* Botão Gestão da Tabela */
+.btn--secondary {
+  background: #c92e12;
+  color: #fbfcfd;
+  border: 2px solid #f01c0c;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 }
 
-@media (min-width: 960px) {
-  .card { grid-column: span 4; }
+.btn--secondary:hover {
+  background: #e5e7eb;
 }
