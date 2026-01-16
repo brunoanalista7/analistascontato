@@ -32,15 +32,27 @@ html, body {
 }
 
 .logo {
-  width: 44px;
+  width: 44px;       /* mantém o tamanho original */
   height: 44px;
-  border-radius: 12px;
-  background: var(--white);
-  color: var(--red-700);
-  display: grid;
-  place-items: center;
-  font-weight: 800;
+  border-radius: 12px; /* mantém cantos arredondados */
+  overflow: hidden;   /* garante que a imagem não "vaze" do arredondamento */
+  display: flex;      /* flex ajuda a centralizar a imagem dentro do container */
+  align-items: center;
+  justify-content: center;
 }
+
+.logo {
+  width: 100px;          /* aumenta o tamanho da logo */
+  height: 80px;
+  border-radius: 16px;  /* mantém cantos arredondados */
+  background: #ffffff;  /* fundo branco */
+  display: flex;        /* centraliza a imagem */
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;     /* garante que a imagem não "vaze" do container */
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1); /* opcional: sombra leve para destacar */
+}
+
 
 .container {
   max-width: 1100px;
