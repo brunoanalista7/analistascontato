@@ -1,80 +1,58 @@
-// ================= GERENTE =================
-const manager = {
-  nome: "João Paulo",
-  foto: "imageb.jpeg",
-  whatsapp: "5583991108967",
-  cargo: "Gerente Comercial",
-  tabela: ["Todas as Tabelas"]
+// ================= DADOS =================
+const managersByTable = {
+  A: {
+    gerente: { nome: "João Paulo", foto: "imageb.jpeg", whatsapp: "5583991108967", cargo: "Gerente Comercial" },
+    supervisores: [
+      { nome: "Sandra", foto: "imageb.jpeg", whatsapp: "5583991108967", cargo: "Supervisor Comercial" },
+      { nome: "Marcos", foto: "imageb.jpeg", whatsapp: "5583991108967", cargo: "Supervisor Comercial" },
+      { nome: "Paula", foto: "imageb.jpeg", whatsapp: "5583991108967", cargo: "Supervisor Comercial" },
+    ]
+  },
+  B: {
+    gerente: { nome: "Fernanda Costa", foto: "imageb.jpeg", whatsapp: "5583991108967", cargo: "Gerente Comercial" },
+    supervisores: [
+      { nome: "João Pedro", foto: "imageb.jpeg", whatsapp: "5583991108967", cargo: "Supervisor Comercial" },
+      { nome: "Larissa Melo", foto: "imageb.jpeg", whatsapp: "5583991108967", cargo: "Supervisor Comercial" },
+      { nome: "Daniel Nunes", foto: "imageb.jpeg", whatsapp: "5583991108967", cargo: "Supervisor Comercial" },
+    ]
+  },
+
+  C: {
+    gerente: { nome: "Fernanda Costa", foto: "imageb.jpeg", whatsapp: "5583991108967", cargo: "Gerente Comercial" },
+    supervisores: [
+      { nome: "João Pedro", foto: "imageb.jpeg", whatsapp: "5583991108967", cargo: "Supervisor Comercial" },
+      { nome: "Larissa Melo", foto: "imageb.jpeg", whatsapp: "5583991108967", cargo: "Supervisor Comercial" },
+      { nome: "Daniel Nunes", foto: "imageb.jpeg", whatsapp: "5583991108967", cargo: "Supervisor Comercial" },
+    ]
+  },
+
+  D: {
+    gerente: { nome: "Fernanda Costa", foto: "imageb.jpeg", whatsapp: "5583991108967", cargo: "Gerente Comercial" },
+    supervisores: [
+      { nome: "João Pedro", foto: "imageb.jpeg", whatsapp: "5583991108967", cargo: "Supervisor Comercial" },
+      { nome: "Larissa Melo", foto: "imageb.jpeg", whatsapp: "5583991108967", cargo: "Supervisor Comercial" },
+      { nome: "Daniel Nunes", foto: "imageb.jpeg", whatsapp: "5583991108967", cargo: "Supervisor Comercial" },
+    ]
+  },
+
+   F: {
+    gerente: { nome: "Fernanda Costa", foto: "imageb.jpeg", whatsapp: "5583991108967", cargo: "Gerente Comercial" },
+    supervisores: [
+      { nome: "João Pedro", foto: "imageb.jpeg", whatsapp: "5583991108967", cargo: "Supervisor Comercial" },
+      { nome: "Larissa Melo", foto: "imageb.jpeg", whatsapp: "5583991108967", cargo: "Supervisor Comercial" },
+      { nome: "Daniel Nunes", foto: "imageb.jpeg", whatsapp: "5583991108967", cargo: "Supervisor Comercial" },
+    ]
+  },
+
+  
+
+
+
+  // Continue para tabelas C, D, E, F...
 };
 
-
-// Dados fictícios dos analistas
-const analysts = [
-  {
-    nome: "Tayran",
-    foto: "imageb.jpeg",
-    whatsapp: "5583991108967",
-    cargo: "Analista Comercial",
-    tabela: ["Tabela A"]
-  },
-  {
-    nome: "Kayo",
-    foto: "imageb.jpeg",
-    whatsapp: "5583991108967",
-    cargo: "Analista Comercial",
-    tabela: ["Tabela B"]
-  },
-  {
-    nome: "Carol",
-    foto: "imageb.jpeg",
-    whatsapp: "5583991108967",
-    cargo: "Analista Comercial",
-    tabela: ["Tabela C"]
-  },
-
-   {
-    nome: "Everthon",
-    foto: "imageb.jpeg",
-    whatsapp: "5583991108967",
-    cargo: "Analista Comercial",
-    tabela: ["Tabela D"]
-  },
-
-    {
-    nome: "Bruno Correia",
-    foto: "imageb.jpeg",
-    whatsapp: "5583991108967",
-    cargo: "Analista Comercial",
-    tabela: ["Tabela E"]
-  },
-
-  {
-    nome: "Maria Rita",
-    foto: "imageb.jpeg",
-    whatsapp: "5583991108967",
-    cargo: "Analista Comercial",
-    tabela: ["Tabela F"]
-  }
-];
-
-// ================= RENDERIZAÇÃO =================
-function renderManager() {
-  const section = document.getElementById("managerSection");
-  section.innerHTML = `
-    <div class="manager-card">
-      ${cardTemplate(manager, false)}
-    </div>
-  `;
-}
-
-function renderAnalysts() {
-  const grid = document.getElementById("analystsGrid");
-  grid.innerHTML = analysts.map(a => cardTemplate(a, true)).join("");
-}
-
-
-// ================= TEMPLATE =================
-function cardTemplate({ nome, foto, whatsapp, cargo, tabela }, isAnalyst = false) {
+// ================= FUNÇÕES =================
+function cardTemplate({ nome, foto, whatsapp, cargo }, showGestao = false, tabela = null) {
   const waLink = `https://web.whatsapp.com/send?phone=${whatsapp}&text=${encodeURIComponent(
     `Olá ${nome}, gostaria de falar sobre uma proposta comercial.`
   )}`;
@@ -85,33 +63,16 @@ function cardTemplate({ nome, foto, whatsapp, cargo, tabela }, isAnalyst = false
       <div class="card__body">
         <h2 class="card__name">${nome}</h2>
         <p class="card__role">${cargo}</p>
-
-        <div class="card__meta">
-          ${tabela.map(t => `<span class="badge">${t}</span>`).join("")}
-        </div>
-
         <div class="card__actions">
-          <button class="btn btn--whatsapp" onclick="openWhatsApp('${waLink}')">
-            Falar no WhatsApp
-          </button>
-
-          <button class="btn btn--outline" onclick="copyContact('${whatsapp}')">
-            Copiar número
-          </button>
-
-          ${
-            isAnalyst
-              ? `<a href="gestao.html" class="btn btn--secondary">Gestão da Tabela</a>`
-              : ``
-          }
+          <button class="btn btn--whatsapp" onclick="openWhatsApp('${waLink}')">Falar no WhatsApp</button>
+          <button class="btn btn--outline" onclick="copyContact('${whatsapp}')">Copiar número</button>
+          ${showGestao ? `<a href="gestao.html?tabela=${tabela}" class="btn btn--secondary">Gestão da Tabela</a>` : ""}
         </div>
       </div>
     </article>
   `;
 }
 
-
-// ================= AÇÕES =================
 function openWhatsApp(url) {
   window.open(url, "_blank", "noopener,noreferrer");
 }
@@ -122,18 +83,55 @@ function copyContact(number) {
     .catch(() => alert("Não foi possível copiar o número."));
 }
 
+// ================= RENDER INDEX =================
+function renderManagerAndAnalysts() {
+  const managerSection = document.getElementById("managerSection");
+  const analystsGrid = document.getElementById("analystsGrid");
+
+  // Card do gerente (geral)
+  managerSection.innerHTML = cardTemplate({ nome: "João Paulo", foto: "imageb.jpeg", whatsapp: "5583991108967", cargo: "Gerente Geral" });
+
+  // Cards dos analistas
+  const analysts = [
+    { nome: "Tayran", tabela: "A" },
+    { nome: "Kayo", tabela: "B" },
+    { nome: "Carol", tabela: "C" },
+    { nome: "Everthon", tabela: "D" },
+    { nome: "Bruno", tabela: "E" },
+    { nome: "Maria Rita", tabela: "F" }
+  ];
+
+  analystsGrid.innerHTML = analysts.map(a => cardTemplate(
+    { nome: a.nome, foto: "imageb.jpeg", whatsapp: "5583991108967", cargo: "Analista Comercial" },
+    true,
+    a.tabela
+  )).join("");
+}
+
+// ================= RENDER GESTÃO =================
+function renderGestao() {
+  const params = new URLSearchParams(window.location.search);
+  const tabela = params.get("tabela");
+  const grid = document.getElementById("managementGrid");
+
+  if (!tabela || !managersByTable[tabela]) {
+    grid.innerHTML = "<p>Tabela não encontrada.</p>";
+    return;
+  }
+
+  const data = managersByTable[tabela];
+
+  grid.innerHTML = `
+    ${cardTemplate(data.gerente)}
+    ${data.supervisores.map(s => cardTemplate(s)).join("")}
+  `;
+}
+
 // ================= INIT =================
 document.addEventListener("DOMContentLoaded", () => {
-  renderManager();
-  renderAnalysts();
+  if (document.getElementById("managementGrid")) {
+    renderGestao(); // página gestao.html
+  } else {
+    renderManagerAndAnalysts(); // página index.html
+  }
 });
-
-function renderManager() {
-  const section = document.getElementById("managerSection");
-  section.innerHTML = cardTemplate(manager, false);
-}
-
-function renderSupervisors() {
-  const grid = document.getElementById("supervisorsGrid");
-  grid.innerHTML = supervisors.map(s => cardTemplate(s, false)).join("");
-}
