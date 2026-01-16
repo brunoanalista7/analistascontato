@@ -1,57 +1,61 @@
 // ================= DADOS =================
 const managersByTable = {
   A: {
-    gerente: { nome: "João Paulo", foto: "imageb.jpeg", whatsapp: "5583991108967", cargo: "Gerente Comercial" },
+    gerente: { nome: "João Paulo", foto: "gerente-a.jpg", whatsapp: "5583991108967", cargo: "Gerente Comercial" },
     supervisores: [
-      { nome: "Sandra", foto: "imageb.jpeg", whatsapp: "5583991108967", cargo: "Supervisor Comercial" },
-      { nome: "Marcos", foto: "imageb.jpeg", whatsapp: "5583991108967", cargo: "Supervisor Comercial" },
-      { nome: "Paula", foto: "imageb.jpeg", whatsapp: "5583991108967", cargo: "Supervisor Comercial" },
+      { nome: "Sandra", foto: "sandra.jpg", whatsapp: "5583991108967", cargo: "Supervisor Comercial" },
+      { nome: "Marcos", foto: "marcos.jpg", whatsapp: "5583991108967", cargo: "Supervisor Comercial" },
+      { nome: "Paula", foto: "paula.jpg", whatsapp: "5583991108967", cargo: "Supervisor Comercial" }
     ]
   },
+
   B: {
-    gerente: { nome: "Fernanda Costa", foto: "imageb.jpeg", whatsapp: "5583991108967", cargo: "Gerente Comercial" },
+    gerente: { nome: "Fernanda Costa", foto: "fernanda.jpg", whatsapp: "5583991108967", cargo: "Gerente Comercial" },
     supervisores: [
-      { nome: "João Pedro", foto: "imageb.jpeg", whatsapp: "5583991108967", cargo: "Supervisor Comercial" },
-      { nome: "Larissa Melo", foto: "imageb.jpeg", whatsapp: "5583991108967", cargo: "Supervisor Comercial" },
-      { nome: "Daniel Nunes", foto: "imageb.jpeg", whatsapp: "5583991108967", cargo: "Supervisor Comercial" },
+      { nome: "João Pedro", foto: "joao-pedro.jpg", whatsapp: "5583991108967", cargo: "Supervisor Comercial" },
+      { nome: "Larissa Melo", foto: "larissa.jpg", whatsapp: "5583991108967", cargo: "Supervisor Comercial" },
+      { nome: "Daniel Nunes", foto: "daniel.jpg", whatsapp: "5583991108967", cargo: "Supervisor Comercial" }
     ]
   },
 
   C: {
-    gerente: { nome: "Fernanda Costa", foto: "imageb.jpeg", whatsapp: "5583991108967", cargo: "Gerente Comercial" },
+    gerente: { nome: "Fernanda Costa", foto: "fernanda.jpg", whatsapp: "5583991108967", cargo: "Gerente Comercial" },
     supervisores: [
-      { nome: "João Pedro", foto: "imageb.jpeg", whatsapp: "5583991108967", cargo: "Supervisor Comercial" },
-      { nome: "Larissa Melo", foto: "imageb.jpeg", whatsapp: "5583991108967", cargo: "Supervisor Comercial" },
-      { nome: "Daniel Nunes", foto: "imageb.jpeg", whatsapp: "5583991108967", cargo: "Supervisor Comercial" },
+      { nome: "João Pedro", foto: "joao-pedro.jpg", whatsapp: "5583991108967", cargo: "Supervisor Comercial" },
+      { nome: "Larissa Melo", foto: "larissa.jpg", whatsapp: "5583991108967", cargo: "Supervisor Comercial" },
+      { nome: "Daniel Nunes", foto: "daniel.jpg", whatsapp: "5583991108967", cargo: "Supervisor Comercial" }
     ]
   },
 
   D: {
-    gerente: { nome: "Fernanda Costa", foto: "imageb.jpeg", whatsapp: "5583991108967", cargo: "Gerente Comercial" },
+    gerente: { nome: "Fernanda Costa", foto: "fernanda.jpg", whatsapp: "5583991108967", cargo: "Gerente Comercial" },
     supervisores: [
-      { nome: "João Pedro", foto: "imageb.jpeg", whatsapp: "5583991108967", cargo: "Supervisor Comercial" },
-      { nome: "Larissa Melo", foto: "imageb.jpeg", whatsapp: "5583991108967", cargo: "Supervisor Comercial" },
-      { nome: "Daniel Nunes", foto: "imageb.jpeg", whatsapp: "5583991108967", cargo: "Supervisor Comercial" },
+      { nome: "João Pedro", foto: "joao-pedro.jpg", whatsapp: "5583991108967", cargo: "Supervisor Comercial" },
+      { nome: "Larissa Melo", foto: "larissa.jpg", whatsapp: "5583991108967", cargo: "Supervisor Comercial" },
+      { nome: "Daniel Nunes", foto: "daniel.jpg", whatsapp: "5583991108967", cargo: "Supervisor Comercial" }
     ]
   },
 
-   F: {
-    gerente: { nome: "Fernanda Costa", foto: "imageb.jpeg", whatsapp: "5583991108967", cargo: "Gerente Comercial" },
+  E: {
+    gerente: { nome: "Carlos Henrique", foto: "carlos.jpg", whatsapp: "5583991108967", cargo: "Gerente Comercial" },
     supervisores: [
-      { nome: "João Pedro", foto: "imageb.jpeg", whatsapp: "5583991108967", cargo: "Supervisor Comercial" },
-      { nome: "Larissa Melo", foto: "imageb.jpeg", whatsapp: "5583991108967", cargo: "Supervisor Comercial" },
-      { nome: "Daniel Nunes", foto: "imageb.jpeg", whatsapp: "5583991108967", cargo: "Supervisor Comercial" },
+      { nome: "Rafael Lima", foto: "rafael.jpg", whatsapp: "5583991108967", cargo: "Supervisor Comercial" },
+      { nome: "Juliana Alves", foto: "juliana.jpg", whatsapp: "5583991108967", cargo: "Supervisor Comercial" },
+      { nome: "Felipe Rocha", foto: "felipe.jpg", whatsapp: "5583991108967", cargo: "Supervisor Comercial" }
     ]
   },
 
-  
-
-
-
-  // Continue para tabelas C, D, E, F...
+  F: {
+    gerente: { nome: "Fernanda Costa", foto: "fernanda.jpg", whatsapp: "5583991108967", cargo: "Gerente Comercial" },
+    supervisores: [
+      { nome: "João Pedro", foto: "joao-pedro.jpg", whatsapp: "5583991108967", cargo: "Supervisor Comercial" },
+      { nome: "Larissa Melo", foto: "larissa.jpg", whatsapp: "5583991108967", cargo: "Supervisor Comercial" },
+      { nome: "Daniel Nunes", foto: "daniel.jpg", whatsapp: "5583991108967", cargo: "Supervisor Comercial" }
+    ]
+  }
 };
 
-// ================= FUNÇÕES =================
+// ================= TEMPLATE DO CARD =================
 function cardTemplate({ nome, foto, whatsapp, cargo }, showGestao = false, tabela = null) {
   const waLink = `https://web.whatsapp.com/send?phone=${whatsapp}&text=${encodeURIComponent(
     `Olá ${nome}, gostaria de falar sobre uma proposta comercial.`
@@ -73,6 +77,7 @@ function cardTemplate({ nome, foto, whatsapp, cargo }, showGestao = false, tabel
   `;
 }
 
+// ================= FUNÇÕES AUXILIARES =================
 function openWhatsApp(url) {
   window.open(url, "_blank", "noopener,noreferrer");
 }
@@ -88,24 +93,36 @@ function renderManagerAndAnalysts() {
   const managerSection = document.getElementById("managerSection");
   const analystsGrid = document.getElementById("analystsGrid");
 
-  // Card do gerente (geral)
-  managerSection.innerHTML = cardTemplate({ nome: "João Paulo", foto: "imageb.jpeg", whatsapp: "5583991108967", cargo: "Gerente Geral" });
+  // Gerente geral
+  managerSection.innerHTML = cardTemplate({
+    nome: "João Paulo",
+    foto: "joaogerente.png",
+    whatsapp: "5583991108967",
+    cargo: "Gerente Geral"
+  });
 
-  // Cards dos analistas
+  // Analistas (fotos individuais)
   const analysts = [
-    { nome: "Tayran - Tabela A", tabela: "A" },
-    { nome: "Kayo - Tabela B", tabela: "B" },
-    { nome: "Carol - Tabela C", tabela: "C" },
-    { nome: "Everthon - Tabela D", tabela: "D" },
-    { nome: "Bruno - Tabela E", tabela: "E" },
-    { nome: "Maria Rita - Tabela F", tabela: "F" }
+    { nome: "Tayran - Tabela A", tabela: "A", foto: "tayran.png" },
+    { nome: "Kayo - Tabela B", tabela: "B", foto: "kayo.png" },
+    { nome: "Carol - Tabela C", tabela: "C", foto: "carol.png" },
+    { nome: "Everthon - Tabela D", tabela: "D", foto: "everton.png" },
+    { nome: "Bruno - Tabela E", tabela: "E", foto: "bruno.png" },
+    { nome: "Maria Rita - Tabela F", tabela: "F", foto: "rita.png" }
   ];
 
-  analystsGrid.innerHTML = analysts.map(a => cardTemplate(
-    { nome: a.nome, foto: "imageb.jpeg", whatsapp: "5583991108967", cargo: "Analista Comercial" },
-    true,
-    a.tabela
-  )).join("");
+  analystsGrid.innerHTML = analysts.map(a =>
+    cardTemplate(
+      {
+        nome: a.nome,
+        foto: a.foto,
+        whatsapp: "5583991108967",
+        cargo: "Analista Comercial"
+      },
+      true,
+      a.tabela
+    )
+  ).join("");
 }
 
 // ================= RENDER GESTÃO =================
@@ -130,8 +147,8 @@ function renderGestao() {
 // ================= INIT =================
 document.addEventListener("DOMContentLoaded", () => {
   if (document.getElementById("managementGrid")) {
-    renderGestao(); // página gestao.html
+    renderGestao();      // gestao.html
   } else {
-    renderManagerAndAnalysts(); // página index.html
+    renderManagerAndAnalysts(); // index.html
   }
 });
