@@ -103,10 +103,10 @@ function renderManagerAndAnalysts() {
 
   // Analistas (fotos individuais)
   const analysts = [
-    { nome: "Tayran - Tabela A", tabela: "A", foto: "tayran.png" },
+    { nome: "Elaine - Tabela A", tabela: "A", foto: "elaine.png" },
     { nome: "Kayo - Tabela B", tabela: "B", foto: "kayo.png" },
     { nome: "Carol - Tabela C", tabela: "C", foto: "carol.png" },
-    { nome: "Everthon - Tabela D", tabela: "D", foto: "everton.png" },
+    { nome: "Elaine - Tabela D", tabela: "D", foto: "elaine.png" },
     { nome: "Bruno - Tabela E", tabela: "E", foto: "bruno.png" },
     { nome: "Maria Rita - Tabela F", tabela: "F", foto: "rita.png" }
   ];
