@@ -14,7 +14,21 @@ function renderIndex() {
     cargo: "Gerente Inteligência Comercial",
   };
 
-  managerSection.innerHTML = cardTemplate(gerenteGeral);
+  const analistaRotas = {
+  nome: "Fabia",
+  foto: "fabia.png",
+  whatsapp: "558394448025",
+  cargo: "Analista de Rotas",
+};
+
+
+
+  managerSection.innerHTML = `
+  <div class="manager-grid">
+    ${cardTemplate(gerenteGeral)}
+    ${cardTemplate(analistaRotas)}
+  </div>
+`;
 
   analystsGrid.innerHTML = ANALISTAS.map(a =>
     cardTemplate(a, {

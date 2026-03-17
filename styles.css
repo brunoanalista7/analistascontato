@@ -174,3 +174,16 @@ html, body {
 .btn--secondary:hover {
   background: #e5e7eb;
 }
+
+.manager-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+  margin-bottom: 32px;
+}
+
+@media (min-width: 768px) {
+  .manager-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
