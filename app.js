@@ -9,14 +9,14 @@ function renderIndex() {
 
   const gerenteGeral = {
     nome: "João Paulo",
-    foto: "joaogerente.png",
+    foto: "images/joaogerente.png",
     whatsapp: "558391071468",
     cargo: "Gerente Inteligência Comercial",
   };
 
   const analistaRotas = {
   nome: "Fabia",
-  foto: "fabia.png",
+  foto: "images/fabia.png",
   whatsapp: "558394448025",
   cargo: "Analista de Rotas",
 };
